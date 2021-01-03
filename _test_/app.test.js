@@ -56,6 +56,20 @@ describe("When the article CRUD server is running", () => {
     expect(res.status).toBe(400);
   });
 
+  it("should return an article matching the ID specified in a DELETE request to '/article/:id'", async () => {
+    const allArticles = await request(app).get("/articles/all");
+    const id = allArticles.body[0]._id;
+    console.log(id);
+    const res = await request(app).delete("/articles/" + id);
+    expect(res.status).toBe(200);
+    expect(res.body.title).toEqual("test");
+  });
+
+  it("should return 400 if an article cannot match the ID specified in a DELETE request to '/article/:id'", async () => {
+    const res = await request(app).delete("/articles/dfgf");
+    expect(res.status).toBe(400);
+  });
+
   afterAll(async () => {
     await server.close();
     await mongoose.connection.db.dropDatabase();
