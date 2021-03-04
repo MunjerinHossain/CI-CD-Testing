@@ -1,17 +1,17 @@
 # CI-CD-Testing
 
-# Following instruction must needed for this app:
+Following instruction must needed for this app:
 
-# ● Node.js installed
-
-
-# ● MongoDB installed and running
+● Node.js installed
 
 
-# ● VS Code with Git Bash integrated
+● MongoDB installed and running
 
 
-# ● GitHub Account
+● VS Code with Git Bash integrated
 
 
-# ● Heroku Account
+● GitHub Account
+
+
+● Heroku Account
